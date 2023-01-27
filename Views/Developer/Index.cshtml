@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Developers";
+}
+
+@section Scripts
+    {
+    <script src="~/js/Developer.js"></script>
+   
+
+}
+<div class="text-center">
+    <h1 class="display-4">Developers</h1>
+</div>
+
+
+<p>
+    <button type="button" class="btn btn-primary" onclick="CreateNewModal()">Create New</button>
+</p>
+
+
+<div class="col-12 border bg-light" style="border-radius:20px; padding:30px;">
+    <table id="developerListTable" class="table table-bordered table-striped" style="width:100%">
+        <thead>
+            <tr>
+
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Job Title</th>
+                <th></th>
+                <th></th>
+
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+</div>
+
+<div class="modal" tabindex="-1" role="dialog" aria-labelledby="AddDevModal" aria-hidden="true" id="AddDevModal">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Create New Developer</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="clearmodal()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" id="DeveloperDivParent">
+                <div class="row mb-3 child_sub_container" style="margin-top:-16px" id="duplicater">
+                    <div class="col-4">
+                        <div class="form-group child_sub"><p>Name:</p><input type="text" class="form-control " id="txt_Name" required /></div>
+                        <div class="form-group child_sub"><input type="hidden" class="form-control" id="txt_Id" /></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group child_sub"><p>Age:</p><input type="text" class="form-control" id="txt_Age" required /></div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group child_sub"><p>Job Title:</p><input type="text" class="form-control" id="txt_JobTitle" required /></div>
+                    </div>
+
+                    <hr />
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button id="createmorebutton" class="btn btn-primary" onclick="CreationNewDiv()">Add More</button>
+                <button type="submit" id="savebutton" class="btn btn-primary" onclick="save()">Save</button>
+                <button type="submit" id="editbutton" class="btn btn-primary d-none" onclick="update()">Edit</button>
+                
+                <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="clearmodal()">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
